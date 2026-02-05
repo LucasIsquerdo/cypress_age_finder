@@ -28,10 +28,10 @@ describe('Age Calculator', () => {
   it('testando com as datas iguais (Nascimento/Dia) (default do site)', () =>
   {
     cy.get('input[type="submit"]').contains('Calculate').click()
-    cy.get('.verybigtext').should('contain',saidaEsperada)
+    cy.get('.verybigtext').should('contain',"0 days")
   })
 
-  it.only('testando com os parâmetros de nascimento e "age at"', () =>
+  it('testando com os parâmetros de nascimento e "age at"', () =>
   {
     cy.preencheDataNascimento(dataNascimento)
     cy.preencheDataDesejada(dataDesejada)
